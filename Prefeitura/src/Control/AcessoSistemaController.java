@@ -5,6 +5,7 @@ import Model.Pessoa;
 import Model.Sistema;
 import java.util.List;
 public class AcessoSistemaController extends Controller<AcessoSistema>{
+    
     AcessoSistemaDAO dao=new AcessoSistemaDAO();
 
     public void insert(Sistema sistema,Pessoa pessoa){
