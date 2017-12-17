@@ -107,7 +107,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="mi_cadEquipamento4">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+E"/>
+                  <KeyStroke key="Shift+E"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Equipamento"/>
               </Properties>
@@ -118,7 +118,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="mi_cadTipoEquipamento1">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+T"/>
+                  <KeyStroke key="Shift+T"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Tipo de Equipamento"/>
               </Properties>
@@ -140,7 +140,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="mi_cadEquipamento5">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+I"/>
+                  <KeyStroke key="Shift+I"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Sistema"/>
               </Properties>
@@ -212,6 +212,11 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="btn_cadastrarPessoa1" min="-2" pref="218" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btn_consultarPessoa2" min="-2" pref="215" max="-2" attributes="0"/>
+                  </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -221,21 +226,23 @@
                               <Component id="btn_cadastrarSecretaria" alignment="0" min="-2" pref="218" max="-2" attributes="0"/>
                           </Group>
                           <Component id="btn_cadastrarAcesso" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                          <Component id="btn_cadastrarAcesso1" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btn_consultarPessoa" max="32767" attributes="0"/>
-                          <Component id="btn_consultarPessoa1" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="btn_cadastrarSistema1" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="btn_consultarPessoa" alignment="1" min="-2" pref="215" max="-2" attributes="0"/>
+                                  <Component id="btn_consultarPessoa1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_consultarPessoa3" alignment="1" min="-2" pref="215" max="-2" attributes="0"/>
+                                  <Component id="btn_cadastrarAcesso2" alignment="1" min="-2" pref="215" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="btn_cadastrarAcesso1" min="-2" pref="215" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="btn_cadastrarPessoa1" min="-2" pref="218" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btn_consultarPessoa2" min="-2" pref="215" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -247,32 +254,41 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="txt_titulo" min="-2" pref="36" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btn_consultarPessoa1" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                  <Component id="btn_cadastrarAcesso" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-              </Group>
+              <Component id="btn_cadastrarAcesso" min="-2" pref="38" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="btn_consultarPessoa" min="-2" pref="38" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
                       <Component id="btn_cadastrarSistema" min="-2" pref="38" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btn_cadastrarAcesso1" min="-2" pref="38" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="btn_cadastrarEquipamento" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btn_cadastrarEquipamento" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="btn_consultarPessoa1" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btn_cadastrarPessoa" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btn_cadastrarPessoa" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="btn_consultarPessoa" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btn_cadastrarSecretaria" min="-2" pref="38" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btn_cadastrarSecretaria" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="btn_consultarPessoa3" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btn_cadastrarPessoa1" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                           <Component id="btn_consultarPessoa2" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btn_cadastrarSistema1" min="-2" pref="38" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btn_cadastrarAcesso2" min="-2" pref="38" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="btn_cadastrarAcesso1" min="-2" pref="38" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -405,6 +421,39 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_consultarPessoa2ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_cadastrarSistema1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Consultar Sistemas"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_cadastrarSistema1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_consultarPessoa3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Consultar Secretaria"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_consultarPessoa3ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_cadastrarAcesso2">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Consultar Tipo Equipamento"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_cadastrarAcesso2ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

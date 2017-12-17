@@ -38,6 +38,9 @@ public class ViewPrincipal extends javax.swing.JFrame {
         btn_cadastrarAcesso = new javax.swing.JButton();
         btn_cadastrarAcesso1 = new javax.swing.JButton();
         btn_consultarPessoa2 = new javax.swing.JButton();
+        btn_cadastrarSistema1 = new javax.swing.JButton();
+        btn_consultarPessoa3 = new javax.swing.JButton();
+        btn_cadastrarAcesso2 = new javax.swing.JButton();
         menubar = new javax.swing.JMenuBar();
         mb_cadastrar = new javax.swing.JMenu();
         mi_cadAcesso = new javax.swing.JMenuItem();
@@ -150,6 +153,30 @@ public class ViewPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btn_cadastrarSistema1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_cadastrarSistema1.setText("Consultar Sistemas");
+        btn_cadastrarSistema1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cadastrarSistema1ActionPerformed(evt);
+            }
+        });
+
+        btn_consultarPessoa3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_consultarPessoa3.setText("Consultar Secretaria");
+        btn_consultarPessoa3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultarPessoa3ActionPerformed(evt);
+            }
+        });
+
+        btn_cadastrarAcesso2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_cadastrarAcesso2.setText("Consultar Tipo Equipamento");
+        btn_cadastrarAcesso2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cadastrarAcesso2ActionPerformed(evt);
+            }
+        });
+
         mb_cadastrar.setText("Cadastrar");
 
         mi_cadAcesso.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
@@ -228,7 +255,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
         });
         mb_cadastrar1.add(mi_cadAcesso1);
 
-        mi_cadEquipamento4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        mi_cadEquipamento4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.SHIFT_MASK));
         mi_cadEquipamento4.setText("Equipamento");
         mi_cadEquipamento4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,7 +264,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
         });
         mb_cadastrar1.add(mi_cadEquipamento4);
 
-        mi_cadTipoEquipamento1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
+        mi_cadTipoEquipamento1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.SHIFT_MASK));
         mi_cadTipoEquipamento1.setText("Tipo de Equipamento");
         mi_cadTipoEquipamento1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -255,7 +282,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
         });
         mb_cadastrar1.add(mi_cadSecretaria1);
 
-        mi_cadEquipamento5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
+        mi_cadEquipamento5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.SHIFT_MASK));
         mi_cadEquipamento5.setText("Sistema");
         mi_cadEquipamento5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -297,24 +324,29 @@ public class ViewPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(btn_cadastrarPessoa1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_consultarPessoa2, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(btn_cadastrarPessoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btn_cadastrarSistema, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btn_cadastrarEquipamento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btn_cadastrarSecretaria, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btn_cadastrarAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btn_consultarPessoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_consultarPessoa1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_cadastrarAcesso1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_cadastrarPessoa1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_consultarPessoa2, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btn_cadastrarAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_cadastrarAcesso1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(btn_cadastrarSistema1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btn_consultarPessoa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_consultarPessoa1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btn_consultarPessoa3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_cadastrarAcesso2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -322,27 +354,34 @@ public class ViewPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(txt_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_consultarPessoa1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_cadastrarAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btn_cadastrarAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_consultarPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(138, 138, 138)
-                        .addComponent(btn_cadastrarSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(176, 176, 176)
+                        .addComponent(btn_cadastrarSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_cadastrarAcesso1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_cadastrarEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn_cadastrarEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_consultarPessoa1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_cadastrarPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn_cadastrarPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_consultarPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_cadastrarSecretaria, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn_cadastrarSecretaria, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_consultarPessoa3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_cadastrarPessoa1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_consultarPessoa2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_cadastrarAcesso1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_consultarPessoa2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_cadastrarSistema1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_cadastrarAcesso2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -414,11 +453,11 @@ public class ViewPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mi_cadAcesso1ActionPerformed
 
     private void mi_cadEquipamento4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_cadEquipamento4ActionPerformed
-        // TODO add your handling code here:
+        btn_consultarEquipamento();
     }//GEN-LAST:event_mi_cadEquipamento4ActionPerformed
 
     private void mi_cadTipoEquipamento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_cadTipoEquipamento1ActionPerformed
-        // TODO add your handling code here:
+        btn_consultarTipoEquipamento();
     }//GEN-LAST:event_mi_cadTipoEquipamento1ActionPerformed
 
     private void mi_cadSecretaria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_cadSecretaria1ActionPerformed
@@ -426,7 +465,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mi_cadSecretaria1ActionPerformed
 
     private void mi_cadEquipamento5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_cadEquipamento5ActionPerformed
-        // TODO add your handling code here:
+        btn_consultarSistema();
     }//GEN-LAST:event_mi_cadEquipamento5ActionPerformed
 
     private void mi_cadEquipamento6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_cadEquipamento6ActionPerformed
@@ -444,8 +483,25 @@ public class ViewPrincipal extends javax.swing.JFrame {
     private void btn_consultarPessoa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarPessoa2ActionPerformed
         btn_consultarSetor();
     }//GEN-LAST:event_btn_consultarPessoa2ActionPerformed
+
+    private void btn_cadastrarSistema1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarSistema1ActionPerformed
+        btn_consultarSistema();
+    }//GEN-LAST:event_btn_cadastrarSistema1ActionPerformed
+
+    private void btn_consultarPessoa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarPessoa3ActionPerformed
+        btn_consultarSecretaria();
+    }//GEN-LAST:event_btn_consultarPessoa3ActionPerformed
+
+    private void btn_cadastrarAcesso2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarAcesso2ActionPerformed
+        btn_consultarTipoEquipamento();
+    }//GEN-LAST:event_btn_cadastrarAcesso2ActionPerformed
     public void btn_consultarPessoa(){
         new ViewConsultarPessoa().setVisible(true);
+        this.setVisible(false);
+    }
+    
+    public void btn_consultarSecretaria(){
+        new ViewConsultarSecretaria().setVisible(true);
         this.setVisible(false);
     }
     
@@ -461,6 +517,18 @@ public class ViewPrincipal extends javax.swing.JFrame {
     
     public void btn_consultarSetor(){
         new ViewConsultarSetor().setVisible(true);
+        this.setVisible(false);
+    }
+    
+    public void btn_consultarTipoEquipamento(){
+        new ViewConsultarTipoEquipamento().setVisible(true);
+        this.setVisible(false);
+    }
+    
+    
+    
+    public void btn_consultarSistema(){
+        new ViewConsultarSistema().setVisible(true);
         this.setVisible(false);
     }
     
@@ -548,14 +616,17 @@ public class ViewPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_cadastrarAcesso;
     private javax.swing.JButton btn_cadastrarAcesso1;
+    private javax.swing.JButton btn_cadastrarAcesso2;
     private javax.swing.JButton btn_cadastrarEquipamento;
     private javax.swing.JButton btn_cadastrarPessoa;
     private javax.swing.JButton btn_cadastrarPessoa1;
     private javax.swing.JButton btn_cadastrarSecretaria;
     private javax.swing.JButton btn_cadastrarSistema;
+    private javax.swing.JButton btn_cadastrarSistema1;
     private javax.swing.JButton btn_consultarPessoa;
     private javax.swing.JButton btn_consultarPessoa1;
     private javax.swing.JButton btn_consultarPessoa2;
+    private javax.swing.JButton btn_consultarPessoa3;
     private javax.swing.JMenu mb_cadastrar;
     private javax.swing.JMenu mb_cadastrar1;
     private javax.swing.JMenuBar menubar;

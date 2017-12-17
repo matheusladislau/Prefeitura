@@ -62,8 +62,6 @@ public class Equipamento{
         return setor;
     }
     
-    
-    
 //SET
     public void setIdEquipamento(int idEquipamento){
         this.idEquipamento=idEquipamento;
