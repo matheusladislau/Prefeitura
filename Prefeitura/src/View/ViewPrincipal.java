@@ -41,24 +41,24 @@ public class ViewPrincipal extends javax.swing.JFrame {
         btn_consultarSecretaria = new javax.swing.JButton();
         btn_consultarTipoEquipamento = new javax.swing.JButton();
         btn_consultarSistema = new javax.swing.JButton();
-        btn_cadastrarAcesso1 = new javax.swing.JButton();
+        btn_consultarAcesso = new javax.swing.JButton();
         menubar = new javax.swing.JMenuBar();
         mb_cadastrar = new javax.swing.JMenu();
         mi_cadAcesso = new javax.swing.JMenuItem();
         mi_cadEquipamento = new javax.swing.JMenuItem();
         mi_cadTipoEquipamento = new javax.swing.JMenuItem();
         mi_cadSecretaria = new javax.swing.JMenuItem();
-        mi_cadEquipamento1 = new javax.swing.JMenuItem();
-        mi_cadEquipamento2 = new javax.swing.JMenuItem();
-        mi_cadEquipamento3 = new javax.swing.JMenuItem();
+        mi_cadSistema = new javax.swing.JMenuItem();
+        mi_cadSetor = new javax.swing.JMenuItem();
+        mi_cadPessoa = new javax.swing.JMenuItem();
         mb_consultar = new javax.swing.JMenu();
-        mi_cadAcesso1 = new javax.swing.JMenuItem();
-        mi_cadEquipamento4 = new javax.swing.JMenuItem();
-        mi_cadTipoEquipamento1 = new javax.swing.JMenuItem();
-        mi_cadSecretaria1 = new javax.swing.JMenuItem();
-        mi_cadEquipamento5 = new javax.swing.JMenuItem();
-        mi_cadEquipamento6 = new javax.swing.JMenuItem();
-        mi_cadEquipamento7 = new javax.swing.JMenuItem();
+        mi_conAcesso = new javax.swing.JMenuItem();
+        mi_conEquipamento = new javax.swing.JMenuItem();
+        mi_conTipoEquipamento = new javax.swing.JMenuItem();
+        mi_conSecretaria = new javax.swing.JMenuItem();
+        mi_conSistema = new javax.swing.JMenuItem();
+        mi_conSetor = new javax.swing.JMenuItem();
+        mi_conPessoa = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -178,11 +178,11 @@ public class ViewPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btn_cadastrarAcesso1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_cadastrarAcesso1.setText("Consultar Acesso");
-        btn_cadastrarAcesso1.addActionListener(new java.awt.event.ActionListener() {
+        btn_consultarAcesso.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_consultarAcesso.setText("Consultar Acesso");
+        btn_consultarAcesso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cadastrarAcesso1ActionPerformed(evt);
+                btn_consultarAcessoActionPerformed(evt);
             }
         });
 
@@ -224,99 +224,99 @@ public class ViewPrincipal extends javax.swing.JFrame {
         });
         mb_cadastrar.add(mi_cadSecretaria);
 
-        mi_cadEquipamento1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
-        mi_cadEquipamento1.setText("Sistema");
-        mi_cadEquipamento1.addActionListener(new java.awt.event.ActionListener() {
+        mi_cadSistema.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
+        mi_cadSistema.setText("Sistema");
+        mi_cadSistema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mi_cadEquipamento1ActionPerformed(evt);
+                mi_cadSistemaActionPerformed(evt);
             }
         });
-        mb_cadastrar.add(mi_cadEquipamento1);
+        mb_cadastrar.add(mi_cadSistema);
 
-        mi_cadEquipamento2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
-        mi_cadEquipamento2.setText("Setor");
-        mi_cadEquipamento2.addActionListener(new java.awt.event.ActionListener() {
+        mi_cadSetor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        mi_cadSetor.setText("Setor");
+        mi_cadSetor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mi_cadEquipamento2ActionPerformed(evt);
+                mi_cadSetorActionPerformed(evt);
             }
         });
-        mb_cadastrar.add(mi_cadEquipamento2);
+        mb_cadastrar.add(mi_cadSetor);
 
-        mi_cadEquipamento3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
-        mi_cadEquipamento3.setText("Pessoa");
-        mi_cadEquipamento3.addActionListener(new java.awt.event.ActionListener() {
+        mi_cadPessoa.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        mi_cadPessoa.setText("Pessoa");
+        mi_cadPessoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mi_cadEquipamento3ActionPerformed(evt);
+                mi_cadPessoaActionPerformed(evt);
             }
         });
-        mb_cadastrar.add(mi_cadEquipamento3);
+        mb_cadastrar.add(mi_cadPessoa);
 
         menubar.add(mb_cadastrar);
 
         mb_consultar.setText("Consultar");
 
-        mi_cadAcesso1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
-        mi_cadAcesso1.setText("Acesso a Sistema");
-        mi_cadAcesso1.addActionListener(new java.awt.event.ActionListener() {
+        mi_conAcesso.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.SHIFT_MASK));
+        mi_conAcesso.setText("Acesso a Sistema");
+        mi_conAcesso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mi_cadAcesso1ActionPerformed(evt);
+                mi_conAcessoActionPerformed(evt);
             }
         });
-        mb_consultar.add(mi_cadAcesso1);
+        mb_consultar.add(mi_conAcesso);
 
-        mi_cadEquipamento4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.SHIFT_MASK));
-        mi_cadEquipamento4.setText("Equipamento");
-        mi_cadEquipamento4.addActionListener(new java.awt.event.ActionListener() {
+        mi_conEquipamento.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.SHIFT_MASK));
+        mi_conEquipamento.setText("Equipamento");
+        mi_conEquipamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mi_cadEquipamento4ActionPerformed(evt);
+                mi_conEquipamentoActionPerformed(evt);
             }
         });
-        mb_consultar.add(mi_cadEquipamento4);
+        mb_consultar.add(mi_conEquipamento);
 
-        mi_cadTipoEquipamento1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.SHIFT_MASK));
-        mi_cadTipoEquipamento1.setText("Tipo de Equipamento");
-        mi_cadTipoEquipamento1.addActionListener(new java.awt.event.ActionListener() {
+        mi_conTipoEquipamento.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.SHIFT_MASK));
+        mi_conTipoEquipamento.setText("Tipo de Equipamento");
+        mi_conTipoEquipamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mi_cadTipoEquipamento1ActionPerformed(evt);
+                mi_conTipoEquipamentoActionPerformed(evt);
             }
         });
-        mb_consultar.add(mi_cadTipoEquipamento1);
+        mb_consultar.add(mi_conTipoEquipamento);
 
-        mi_cadSecretaria1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        mi_cadSecretaria1.setText("Secretaria");
-        mi_cadSecretaria1.addActionListener(new java.awt.event.ActionListener() {
+        mi_conSecretaria.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK));
+        mi_conSecretaria.setText("Secretaria");
+        mi_conSecretaria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mi_cadSecretaria1ActionPerformed(evt);
+                mi_conSecretariaActionPerformed(evt);
             }
         });
-        mb_consultar.add(mi_cadSecretaria1);
+        mb_consultar.add(mi_conSecretaria);
 
-        mi_cadEquipamento5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.SHIFT_MASK));
-        mi_cadEquipamento5.setText("Sistema");
-        mi_cadEquipamento5.addActionListener(new java.awt.event.ActionListener() {
+        mi_conSistema.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.SHIFT_MASK));
+        mi_conSistema.setText("Sistema");
+        mi_conSistema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mi_cadEquipamento5ActionPerformed(evt);
+                mi_conSistemaActionPerformed(evt);
             }
         });
-        mb_consultar.add(mi_cadEquipamento5);
+        mb_consultar.add(mi_conSistema);
 
-        mi_cadEquipamento6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_MASK));
-        mi_cadEquipamento6.setText("Setor");
-        mi_cadEquipamento6.addActionListener(new java.awt.event.ActionListener() {
+        mi_conSetor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_MASK));
+        mi_conSetor.setText("Setor");
+        mi_conSetor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mi_cadEquipamento6ActionPerformed(evt);
+                mi_conSetorActionPerformed(evt);
             }
         });
-        mb_consultar.add(mi_cadEquipamento6);
+        mb_consultar.add(mi_conSetor);
 
-        mi_cadEquipamento7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
-        mi_cadEquipamento7.setText("Pessoa");
-        mi_cadEquipamento7.addActionListener(new java.awt.event.ActionListener() {
+        mi_conPessoa.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_MASK));
+        mi_conPessoa.setText("Pessoa");
+        mi_conPessoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mi_cadEquipamento7ActionPerformed(evt);
+                mi_conPessoaActionPerformed(evt);
             }
         });
-        mb_consultar.add(mi_cadEquipamento7);
+        mb_consultar.add(mi_conPessoa);
 
         menubar.add(mb_consultar);
 
@@ -354,7 +354,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn_cadastrarAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_cadastrarAcesso1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_consultarAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -364,7 +364,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
                 .addGap(5, 5, 5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_cadastrarAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_cadastrarAcesso1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_consultarAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(176, 176, 176)
@@ -441,49 +441,49 @@ public class ViewPrincipal extends javax.swing.JFrame {
         btn_cadastrarAcesso();
     }//GEN-LAST:event_btn_cadastrarAcessoActionPerformed
 
-    private void mi_cadEquipamento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_cadEquipamento1ActionPerformed
+    private void mi_cadSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_cadSistemaActionPerformed
         btn_cadastrarSistema();
-    }//GEN-LAST:event_mi_cadEquipamento1ActionPerformed
+    }//GEN-LAST:event_mi_cadSistemaActionPerformed
 
-    private void mi_cadEquipamento2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_cadEquipamento2ActionPerformed
+    private void mi_cadSetorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_cadSetorActionPerformed
         btn_cadastrarSetor();
-    }//GEN-LAST:event_mi_cadEquipamento2ActionPerformed
+    }//GEN-LAST:event_mi_cadSetorActionPerformed
 
-    private void mi_cadEquipamento3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_cadEquipamento3ActionPerformed
+    private void mi_cadPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_cadPessoaActionPerformed
         btn_cadastrarPessoa();
-    }//GEN-LAST:event_mi_cadEquipamento3ActionPerformed
+    }//GEN-LAST:event_mi_cadPessoaActionPerformed
 
     private void mi_cadAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_cadAcessoActionPerformed
         btn_cadastrarAcesso();
     }//GEN-LAST:event_mi_cadAcessoActionPerformed
 
-    private void mi_cadAcesso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_cadAcesso1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mi_cadAcesso1ActionPerformed
+    private void mi_conAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_conAcessoActionPerformed
+        btn_consultarAcesso();
+    }//GEN-LAST:event_mi_conAcessoActionPerformed
 
-    private void mi_cadEquipamento4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_cadEquipamento4ActionPerformed
+    private void mi_conEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_conEquipamentoActionPerformed
         btn_consultarEquipamento();
-    }//GEN-LAST:event_mi_cadEquipamento4ActionPerformed
+    }//GEN-LAST:event_mi_conEquipamentoActionPerformed
 
-    private void mi_cadTipoEquipamento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_cadTipoEquipamento1ActionPerformed
+    private void mi_conTipoEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_conTipoEquipamentoActionPerformed
         btn_consultarTipoEquipamento();
-    }//GEN-LAST:event_mi_cadTipoEquipamento1ActionPerformed
+    }//GEN-LAST:event_mi_conTipoEquipamentoActionPerformed
 
-    private void mi_cadSecretaria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_cadSecretaria1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mi_cadSecretaria1ActionPerformed
+    private void mi_conSecretariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_conSecretariaActionPerformed
+        btn_consultarSecretaria();
+    }//GEN-LAST:event_mi_conSecretariaActionPerformed
 
-    private void mi_cadEquipamento5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_cadEquipamento5ActionPerformed
+    private void mi_conSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_conSistemaActionPerformed
         btn_consultarSistema();
-    }//GEN-LAST:event_mi_cadEquipamento5ActionPerformed
+    }//GEN-LAST:event_mi_conSistemaActionPerformed
 
-    private void mi_cadEquipamento6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_cadEquipamento6ActionPerformed
+    private void mi_conSetorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_conSetorActionPerformed
         btn_consultarSetor();
-    }//GEN-LAST:event_mi_cadEquipamento6ActionPerformed
+    }//GEN-LAST:event_mi_conSetorActionPerformed
 
-    private void mi_cadEquipamento7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_cadEquipamento7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mi_cadEquipamento7ActionPerformed
+    private void mi_conPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_conPessoaActionPerformed
+        btn_consultarPessoa();
+    }//GEN-LAST:event_mi_conPessoaActionPerformed
 
     private void btn_cadastrarTipoEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarTipoEquipamentoActionPerformed
         btn_cadastrarTipoEquipamento();
@@ -505,9 +505,9 @@ public class ViewPrincipal extends javax.swing.JFrame {
         btn_consultarSistema();
     }//GEN-LAST:event_btn_consultarSistemaActionPerformed
 
-    private void btn_cadastrarAcesso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarAcesso1ActionPerformed
+    private void btn_consultarAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarAcessoActionPerformed
         btn_consultarAcesso();
-    }//GEN-LAST:event_btn_cadastrarAcesso1ActionPerformed
+    }//GEN-LAST:event_btn_consultarAcessoActionPerformed
     public void btn_consultarPessoa(){
         new ViewConsultarPessoa().setVisible(true);
         this.setVisible(false);
@@ -626,13 +626,13 @@ public class ViewPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_cadastrarAcesso;
-    private javax.swing.JButton btn_cadastrarAcesso1;
     private javax.swing.JButton btn_cadastrarEquipamento;
     private javax.swing.JButton btn_cadastrarPessoa;
     private javax.swing.JButton btn_cadastrarSecretaria;
     private javax.swing.JButton btn_cadastrarSetor;
     private javax.swing.JButton btn_cadastrarSistema;
     private javax.swing.JButton btn_cadastrarTipoEquipamento;
+    private javax.swing.JButton btn_consultarAcesso;
     private javax.swing.JButton btn_consultarEquipamento;
     private javax.swing.JButton btn_consultarPessoa;
     private javax.swing.JButton btn_consultarSecretaria;
@@ -643,19 +643,19 @@ public class ViewPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu mb_consultar;
     private javax.swing.JMenuBar menubar;
     private javax.swing.JMenuItem mi_cadAcesso;
-    private javax.swing.JMenuItem mi_cadAcesso1;
     private javax.swing.JMenuItem mi_cadEquipamento;
-    private javax.swing.JMenuItem mi_cadEquipamento1;
-    private javax.swing.JMenuItem mi_cadEquipamento2;
-    private javax.swing.JMenuItem mi_cadEquipamento3;
-    private javax.swing.JMenuItem mi_cadEquipamento4;
-    private javax.swing.JMenuItem mi_cadEquipamento5;
-    private javax.swing.JMenuItem mi_cadEquipamento6;
-    private javax.swing.JMenuItem mi_cadEquipamento7;
+    private javax.swing.JMenuItem mi_cadPessoa;
     private javax.swing.JMenuItem mi_cadSecretaria;
-    private javax.swing.JMenuItem mi_cadSecretaria1;
+    private javax.swing.JMenuItem mi_cadSetor;
+    private javax.swing.JMenuItem mi_cadSistema;
     private javax.swing.JMenuItem mi_cadTipoEquipamento;
-    private javax.swing.JMenuItem mi_cadTipoEquipamento1;
+    private javax.swing.JMenuItem mi_conAcesso;
+    private javax.swing.JMenuItem mi_conEquipamento;
+    private javax.swing.JMenuItem mi_conPessoa;
+    private javax.swing.JMenuItem mi_conSecretaria;
+    private javax.swing.JMenuItem mi_conSetor;
+    private javax.swing.JMenuItem mi_conSistema;
+    private javax.swing.JMenuItem mi_conTipoEquipamento;
     private javax.swing.JLabel txt_titulo;
     // End of variables declaration//GEN-END:variables
 }
