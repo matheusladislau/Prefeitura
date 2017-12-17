@@ -88,7 +88,7 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="mb_cadastrar1">
+        <Menu class="javax.swing.JMenu" name="mb_consultar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Consultar"/>
           </Properties>
@@ -255,7 +255,6 @@
                   <Component id="btn_cadastrarAcesso" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                   <Component id="btn_cadastrarAcesso1" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>

@@ -51,7 +51,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
         mi_cadEquipamento1 = new javax.swing.JMenuItem();
         mi_cadEquipamento2 = new javax.swing.JMenuItem();
         mi_cadEquipamento3 = new javax.swing.JMenuItem();
-        mb_cadastrar1 = new javax.swing.JMenu();
+        mb_consultar = new javax.swing.JMenu();
         mi_cadAcesso1 = new javax.swing.JMenuItem();
         mi_cadEquipamento4 = new javax.swing.JMenuItem();
         mi_cadTipoEquipamento1 = new javax.swing.JMenuItem();
@@ -253,7 +253,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
 
         menubar.add(mb_cadastrar);
 
-        mb_cadastrar1.setText("Consultar");
+        mb_consultar.setText("Consultar");
 
         mi_cadAcesso1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
         mi_cadAcesso1.setText("Acesso a Sistema");
@@ -262,7 +262,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
                 mi_cadAcesso1ActionPerformed(evt);
             }
         });
-        mb_cadastrar1.add(mi_cadAcesso1);
+        mb_consultar.add(mi_cadAcesso1);
 
         mi_cadEquipamento4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.SHIFT_MASK));
         mi_cadEquipamento4.setText("Equipamento");
@@ -271,7 +271,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
                 mi_cadEquipamento4ActionPerformed(evt);
             }
         });
-        mb_cadastrar1.add(mi_cadEquipamento4);
+        mb_consultar.add(mi_cadEquipamento4);
 
         mi_cadTipoEquipamento1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.SHIFT_MASK));
         mi_cadTipoEquipamento1.setText("Tipo de Equipamento");
@@ -280,7 +280,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
                 mi_cadTipoEquipamento1ActionPerformed(evt);
             }
         });
-        mb_cadastrar1.add(mi_cadTipoEquipamento1);
+        mb_consultar.add(mi_cadTipoEquipamento1);
 
         mi_cadSecretaria1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         mi_cadSecretaria1.setText("Secretaria");
@@ -289,7 +289,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
                 mi_cadSecretaria1ActionPerformed(evt);
             }
         });
-        mb_cadastrar1.add(mi_cadSecretaria1);
+        mb_consultar.add(mi_cadSecretaria1);
 
         mi_cadEquipamento5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.SHIFT_MASK));
         mi_cadEquipamento5.setText("Sistema");
@@ -298,7 +298,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
                 mi_cadEquipamento5ActionPerformed(evt);
             }
         });
-        mb_cadastrar1.add(mi_cadEquipamento5);
+        mb_consultar.add(mi_cadEquipamento5);
 
         mi_cadEquipamento6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_MASK));
         mi_cadEquipamento6.setText("Setor");
@@ -307,7 +307,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
                 mi_cadEquipamento6ActionPerformed(evt);
             }
         });
-        mb_cadastrar1.add(mi_cadEquipamento6);
+        mb_consultar.add(mi_cadEquipamento6);
 
         mi_cadEquipamento7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
         mi_cadEquipamento7.setText("Pessoa");
@@ -316,9 +316,9 @@ public class ViewPrincipal extends javax.swing.JFrame {
                 mi_cadEquipamento7ActionPerformed(evt);
             }
         });
-        mb_cadastrar1.add(mi_cadEquipamento7);
+        mb_consultar.add(mi_cadEquipamento7);
 
-        menubar.add(mb_cadastrar1);
+        menubar.add(mb_consultar);
 
         setJMenuBar(menubar);
 
@@ -365,7 +365,6 @@ public class ViewPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_cadastrarAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_cadastrarAcesso1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(176, 176, 176)
@@ -641,7 +640,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btn_consultarSistema;
     private javax.swing.JButton btn_consultarTipoEquipamento;
     private javax.swing.JMenu mb_cadastrar;
-    private javax.swing.JMenu mb_cadastrar1;
+    private javax.swing.JMenu mb_consultar;
     private javax.swing.JMenuBar menubar;
     private javax.swing.JMenuItem mi_cadAcesso;
     private javax.swing.JMenuItem mi_cadAcesso1;
