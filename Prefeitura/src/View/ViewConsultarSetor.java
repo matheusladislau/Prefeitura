@@ -24,7 +24,7 @@ public class ViewConsultarSetor extends javax.swing.JFrame{
         txt_subtitulo = new javax.swing.JLabel();
         scr_setor = new javax.swing.JScrollPane();
         tbl_setor = new javax.swing.JTable();
-        btn_voltar1 = new javax.swing.JButton();
+        btn_voltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(440, 230));
@@ -79,11 +79,11 @@ public class ViewConsultarSetor extends javax.swing.JFrame{
             tbl_setor.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        btn_voltar1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_voltar1.setText("Voltar");
-        btn_voltar1.addActionListener(new java.awt.event.ActionListener() {
+        btn_voltar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_voltar.setText("Voltar");
+        btn_voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_voltar1ActionPerformed(evt);
+                btn_voltarActionPerformed(evt);
             }
         });
 
@@ -99,7 +99,7 @@ public class ViewConsultarSetor extends javax.swing.JFrame{
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(btn_voltar1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(289, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -111,23 +111,16 @@ public class ViewConsultarSetor extends javax.swing.JFrame{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(scr_setor, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btn_voltar1, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                .addComponent(btn_voltar, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
                 .addGap(17, 17, 17))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_voltar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltar1ActionPerformed
+    private void btn_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltarActionPerformed
         btn_voltar();
-    }//GEN-LAST:event_btn_voltar1ActionPerformed
-//    public void atualizarTabelaSecretaria(){
-//        List<Secretaria> listaSecretaria=new SecretariaDAO().findAll();
-//        for (int i=0; i<listaSecretaria.size(); i++) {
-//            ((DefaultTableModel)tbl_secretaria.getModel()).addRow(new Object[]{
-//                listaSecretaria.get(i).getCodigoSecretaria(),listaSecretaria.get(i).getSiglaSecretaria(),listaSecretaria.get(i).getNomeSecretaria()});
-//        }
-//    }
+    }//GEN-LAST:event_btn_voltarActionPerformed
     
     public void atualizarTabelaSetor(){
         List<Setor> listaSetor=setorControl.findAll();
@@ -136,19 +129,15 @@ public class ViewConsultarSetor extends javax.swing.JFrame{
                 (listaSetor.get(i).getSecretaria().getSiglaSecretaria()).toUpperCase(),listaSetor.get(i).getSecretaria().getNomeSecretaria(),listaSetor.get(i).getNomeSetor(),listaSetor.get(i).getTelefone(),listaSetor.get(i).getIpRede()});
         }
     }
-    
-  
-    
-    
+      
     public void inserirEquipamento(){
-    
         JOptionPane.showMessageDialog(null,"Equipamento cadastrado");
     }
+    
     public void btn_voltar(){
         new ViewPrincipal().setVisible(true);
         this.setVisible(false);
     }
-    
       
     /**
      * @param args the command line arguments
@@ -187,7 +176,7 @@ public class ViewConsultarSetor extends javax.swing.JFrame{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_voltar1;
+    private javax.swing.JButton btn_voltar;
     private javax.swing.JScrollPane scr_setor;
     private javax.swing.JTable tbl_setor;
     private javax.swing.JLabel txt_subtitulo;

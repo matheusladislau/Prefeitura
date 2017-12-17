@@ -46,6 +46,7 @@ public class ViewCadastrarEquipamento extends javax.swing.JFrame{
         tbl_setor = new javax.swing.JTable();
         txt_selecioneSetor = new javax.swing.JLabel();
         btn_voltar1 = new javax.swing.JButton();
+        txt_rede = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(440, 230));
@@ -169,6 +170,9 @@ public class ViewCadastrarEquipamento extends javax.swing.JFrame{
             }
         });
 
+        txt_rede.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txt_rede.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -208,6 +212,11 @@ public class ViewCadastrarEquipamento extends javax.swing.JFrame{
                 .addContainerGap()
                 .addComponent(txt_selecioneSetor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(txt_rede, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,9 +224,9 @@ public class ViewCadastrarEquipamento extends javax.swing.JFrame{
                 .addComponent(txt_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txt_subtitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txt_selecioneSetor)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_selecioneSetor)
+                .addGap(11, 11, 11)
                 .addComponent(scr_setor, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,6 +251,11 @@ public class ViewCadastrarEquipamento extends javax.swing.JFrame{
                         .addComponent(btn_inserirMicro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)))
                 .addGap(27, 27, 27))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(83, 83, 83)
+                    .addComponent(txt_rede)
+                    .addContainerGap(528, Short.MAX_VALUE)))
         );
 
         pack();
@@ -266,6 +280,7 @@ public class ViewCadastrarEquipamento extends javax.swing.JFrame{
             btn_voltar1.setVisible(false);
             setVisibleCadastrar(true);
             txt_selecioneSetor.setText("Cadastrando em: '"+setor.getNomeSetor()+"', secretaria: '"+setor.getSecretaria().getNomeSecretaria()+"'");
+            txt_rede.setText("Rede: "+setor.getIpRede());
         }else
             JOptionPane.showMessageDialog(null,"Deve selecionar setor");
     }//GEN-LAST:event_btn_selecionarActionPerformed
@@ -385,6 +400,7 @@ public class ViewCadastrarEquipamento extends javax.swing.JFrame{
     private javax.swing.JTable tbl_tipoEquipamento;
     private javax.swing.JLabel txt_identificacao;
     private javax.swing.JLabel txt_ip;
+    private javax.swing.JLabel txt_rede;
     private javax.swing.JLabel txt_selecioneSetor;
     private javax.swing.JLabel txt_subtitulo;
     private javax.swing.JLabel txt_titulo;

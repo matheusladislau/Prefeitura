@@ -1,10 +1,6 @@
 package View;
 import Control.EquipamentoController;
-import Control.TipoEquipamentoController;
-import DAO.TipoEquipamentoDAO;
 import Model.Equipamento;
-import Model.Pessoa;
-import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -38,7 +34,7 @@ public class ViewConsultarEquipamento extends javax.swing.JFrame {
         tbl_equipamento = new javax.swing.JTable();
         btn_editarEquipamento = new javax.swing.JButton();
         btn_voltar = new javax.swing.JButton();
-        btn_voltar1 = new javax.swing.JButton();
+        btn_remover = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(440, 180));
@@ -121,11 +117,11 @@ public class ViewConsultarEquipamento extends javax.swing.JFrame {
             }
         });
 
-        btn_voltar1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_voltar1.setText("Remover");
-        btn_voltar1.addActionListener(new java.awt.event.ActionListener() {
+        btn_remover.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_remover.setText("Remover");
+        btn_remover.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_voltar1ActionPerformed(evt);
+                btn_removerActionPerformed(evt);
             }
         });
 
@@ -161,7 +157,7 @@ public class ViewConsultarEquipamento extends javax.swing.JFrame {
                 .addGap(103, 103, 103)
                 .addComponent(btn_editarEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_voltar1))
+                .addComponent(btn_remover))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -191,7 +187,7 @@ public class ViewConsultarEquipamento extends javax.swing.JFrame {
                                 .addContainerGap())))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btn_voltar1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(btn_remover, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
         pack();
@@ -219,12 +215,12 @@ public class ViewConsultarEquipamento extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Selecione um equipamento para editar");
     }//GEN-LAST:event_btn_editarEquipamentoActionPerformed
 
-    private void btn_voltar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltar1ActionPerformed
+    private void btn_removerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_removerActionPerformed
         if(tbl_equipamento.getSelectedRow()>=0){
             btn_remover();
         }else
             JOptionPane.showMessageDialog(null,"Selecione um equipamento para remover");
-    }//GEN-LAST:event_btn_voltar1ActionPerformed
+    }//GEN-LAST:event_btn_removerActionPerformed
     public void consultar(){
         String identificacao=edt_recebeIdentificacao.getText();
         String ip=edt_recebeIP.getText();
@@ -252,11 +248,10 @@ public class ViewConsultarEquipamento extends javax.swing.JFrame {
     }
     
     public void btn_remover(){
-        Equipamento equip=listaEquipamento.get(tbl_equipamento.getSelectedRow());
-        System.out.println(equip.getIdentificacaoEquipamento());
-        String nome=JOptionPane.showInputDialog("Para efetuar a exclusão escreva exatamente a identificão do equipamento: ");
-        if(nome.equals(equip.getIdentificacaoEquipamento())){
-            removerEquipamento(equip);
+        Equipamento equipamento=listaEquipamento.get(tbl_equipamento.getSelectedRow());
+        String nome=JOptionPane.showInputDialog("Para efetuar a exclusão escreva exatamente a identificacão do equipamento: ");
+        if(nome.equals(equipamento.getIdentificacaoEquipamento())){
+            removerEquipamento(equipamento);
             ViewConsultarEquipamento v=new ViewConsultarEquipamento();
             v.edt_recebeIP.setText(this.edt_recebeIP.getText());
             v.edt_recebeIdentificacao.setText(this.edt_recebeIdentificacao.getText());
@@ -265,14 +260,12 @@ public class ViewConsultarEquipamento extends javax.swing.JFrame {
             this.setVisible(false);
             v.setVisible(true);
         }else{
-            JOptionPane.showMessageDialog(null,"Identificação incorreta, tente novamente ou cancele");
+            JOptionPane.showMessageDialog(null,"Identificação incorreta, tente novamente");
         }
-        
-
     }
     
-    public void removerEquipamento(Equipamento equip){
-        equipamentoControl.remove(equip);
+    public void removerEquipamento(Equipamento equipamento){
+        equipamentoControl.remove(equipamento);
         JOptionPane.showMessageDialog(null,"Equipamento removido");    
     }
     
@@ -303,24 +296,7 @@ public class ViewConsultarEquipamento extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-       
         
-        //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -332,8 +308,8 @@ public class ViewConsultarEquipamento extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_consultarEquipamento;
     private javax.swing.JButton btn_editarEquipamento;
+    private javax.swing.JButton btn_remover;
     private javax.swing.JButton btn_voltar;
-    private javax.swing.JButton btn_voltar1;
     private javax.swing.JTextField edt_recebeIP;
     private javax.swing.JTextField edt_recebeIdentificacao;
     private javax.swing.JScrollPane jScrollPane1;

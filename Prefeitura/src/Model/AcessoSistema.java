@@ -25,4 +25,14 @@ public class AcessoSistema implements Serializable{
         this.sistema=sistema;
         this.pessoa=pessoa;
     }
+
+    public Sistema getSistema() {
+        return sistema;
+    }
+
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+    
+    
 }

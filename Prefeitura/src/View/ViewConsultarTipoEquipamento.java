@@ -1,23 +1,14 @@
 package View;
-import Control.EquipamentoController;
-import Control.SetorController;
 import Control.TipoEquipamentoController;
-import Model.Equipamento;
-import Model.Setor;
 import Model.TipoEquipamento;
 import java.util.List;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class ViewConsultarTipoEquipamento extends javax.swing.JFrame{
     public ViewConsultarTipoEquipamento(){
         initComponents();
         atualizarTabelaTipoEquipamento();
     }
-    Setor setor;
-    Equipamento equipamento;
-    EquipamentoController equipamentoControl=new EquipamentoController();
     TipoEquipamentoController tipoControl=new TipoEquipamentoController();
-    SetorController setorControl=new SetorController();
     
     /**
      * This method is called from within the constructor to initialize the form.

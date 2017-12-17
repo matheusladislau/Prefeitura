@@ -1,10 +1,7 @@
 package View;
 import Control.SecretariaController;
-import Control.SetorController;
 import Model.Secretaria;
-import Model.Setor;
 import java.util.List;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class ViewConsultarSecretaria extends javax.swing.JFrame{
     /**
@@ -14,7 +11,6 @@ public class ViewConsultarSecretaria extends javax.swing.JFrame{
         initComponents();
         atualizarTabela();
     }
-    SetorController setorControl=new SetorController();
     SecretariaController secretariaControl=new SecretariaController();
     
     /**
@@ -139,11 +135,7 @@ public class ViewConsultarSecretaria extends javax.swing.JFrame{
             ((DefaultTableModel)tbl_secretaria.getModel()).addRow(new Object[]{
                 listaSecretaria.get(i).getCodigoSecretaria(),listaSecretaria.get(i).getSiglaSecretaria(),listaSecretaria.get(i).getNomeSecretaria()});
         }
-        
-//        ((DefaultTableModel)tbl_secretaria.getModel()).addRow(new Object[]{"1","sa"});
     }
-    
-    
     
     /**
      * @param args the command line arguments
@@ -172,22 +164,7 @@ public class ViewConsultarSecretaria extends javax.swing.JFrame{
             java.util.logging.Logger.getLogger(ViewConsultarSecretaria.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-    
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

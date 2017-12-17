@@ -56,4 +56,21 @@ public class PessoaDAO extends DAO<Pessoa>{
 //        t.commit();
 //        session.close();
 //    }
+
+    public List<Pessoa> findByNameMatricula(String nome, String matricula) {
+ 
+    String query="FROM Pessoa "
+                + "WHERE nomePessoa LIKE '%"+nome+"%' "
+                + "AND matricula LIKE '%"+matricula+"%'"
+                
+                ;
+        sessao=conexao.openSession();
+        Transaction t=sessao.beginTransaction(); 
+        Query q=sessao.createQuery(query);
+        List resultList=q.list();
+        t.commit();
+        sessao.close();
+        return resultList;      
+        
+    }
 }

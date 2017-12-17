@@ -24,6 +24,13 @@ public class PessoaController extends Controller<Pessoa>{
 //    public Pessoa getByName(String name){
 //        return dao.findByName(name);
 //    }
-    
+
+    public void remove(Pessoa p) {
+        dao.remove(p);
+    }
+
+    public List<Pessoa> findByNameMatricula(String nome, String matricula) {
+        return dao.findByNameMatricula(nome,matricula);
+    }
 }
 

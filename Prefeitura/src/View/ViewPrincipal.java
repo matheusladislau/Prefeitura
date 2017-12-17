@@ -32,15 +32,16 @@ public class ViewPrincipal extends javax.swing.JFrame {
         btn_cadastrarSecretaria = new javax.swing.JButton();
         btn_cadastrarSistema = new javax.swing.JButton();
         btn_cadastrarPessoa = new javax.swing.JButton();
-        btn_cadastrarPessoa1 = new javax.swing.JButton();
+        btn_cadastrarSetor = new javax.swing.JButton();
         btn_consultarPessoa = new javax.swing.JButton();
-        btn_consultarPessoa1 = new javax.swing.JButton();
+        btn_consultarEquipamento = new javax.swing.JButton();
         btn_cadastrarAcesso = new javax.swing.JButton();
+        btn_cadastrarTipoEquipamento = new javax.swing.JButton();
+        btn_consultarSetor = new javax.swing.JButton();
+        btn_consultarSecretaria = new javax.swing.JButton();
+        btn_consultarTipoEquipamento = new javax.swing.JButton();
+        btn_consultarSistema = new javax.swing.JButton();
         btn_cadastrarAcesso1 = new javax.swing.JButton();
-        btn_consultarPessoa2 = new javax.swing.JButton();
-        btn_cadastrarSistema1 = new javax.swing.JButton();
-        btn_consultarPessoa3 = new javax.swing.JButton();
-        btn_cadastrarAcesso2 = new javax.swing.JButton();
         menubar = new javax.swing.JMenuBar();
         mb_cadastrar = new javax.swing.JMenu();
         mi_cadAcesso = new javax.swing.JMenuItem();
@@ -105,11 +106,11 @@ public class ViewPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btn_cadastrarPessoa1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_cadastrarPessoa1.setText("Cadastrar Setor");
-        btn_cadastrarPessoa1.addActionListener(new java.awt.event.ActionListener() {
+        btn_cadastrarSetor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_cadastrarSetor.setText("Cadastrar Setor");
+        btn_cadastrarSetor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cadastrarPessoa1ActionPerformed(evt);
+                btn_cadastrarSetorActionPerformed(evt);
             }
         });
 
@@ -121,11 +122,11 @@ public class ViewPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btn_consultarPessoa1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_consultarPessoa1.setText("Consultar/Editar Equipamento");
-        btn_consultarPessoa1.addActionListener(new java.awt.event.ActionListener() {
+        btn_consultarEquipamento.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_consultarEquipamento.setText("Consultar/Editar Equipamento");
+        btn_consultarEquipamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_consultarPessoa1ActionPerformed(evt);
+                btn_consultarEquipamentoActionPerformed(evt);
             }
         });
 
@@ -137,43 +138,51 @@ public class ViewPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btn_cadastrarTipoEquipamento.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_cadastrarTipoEquipamento.setText("Cadastrar Tipo Equipamento");
+        btn_cadastrarTipoEquipamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cadastrarTipoEquipamentoActionPerformed(evt);
+            }
+        });
+
+        btn_consultarSetor.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_consultarSetor.setText("Consultar Setor");
+        btn_consultarSetor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultarSetorActionPerformed(evt);
+            }
+        });
+
+        btn_consultarSecretaria.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_consultarSecretaria.setText("Consultar Secretaria");
+        btn_consultarSecretaria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultarSecretariaActionPerformed(evt);
+            }
+        });
+
+        btn_consultarTipoEquipamento.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_consultarTipoEquipamento.setText("Consultar Tipo Equipamento");
+        btn_consultarTipoEquipamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultarTipoEquipamentoActionPerformed(evt);
+            }
+        });
+
+        btn_consultarSistema.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_consultarSistema.setText("Consultar Sistemas");
+        btn_consultarSistema.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_consultarSistemaActionPerformed(evt);
+            }
+        });
+
         btn_cadastrarAcesso1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_cadastrarAcesso1.setText("Cadastrar Tipo Equipamento");
+        btn_cadastrarAcesso1.setText("Consultar Acesso");
         btn_cadastrarAcesso1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cadastrarAcesso1ActionPerformed(evt);
-            }
-        });
-
-        btn_consultarPessoa2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_consultarPessoa2.setText("Consultar Setor");
-        btn_consultarPessoa2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_consultarPessoa2ActionPerformed(evt);
-            }
-        });
-
-        btn_cadastrarSistema1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_cadastrarSistema1.setText("Consultar Sistemas");
-        btn_cadastrarSistema1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cadastrarSistema1ActionPerformed(evt);
-            }
-        });
-
-        btn_consultarPessoa3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_consultarPessoa3.setText("Consultar Secretaria");
-        btn_consultarPessoa3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_consultarPessoa3ActionPerformed(evt);
-            }
-        });
-
-        btn_cadastrarAcesso2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_cadastrarAcesso2.setText("Consultar Tipo Equipamento");
-        btn_cadastrarAcesso2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cadastrarAcesso2ActionPerformed(evt);
             }
         });
 
@@ -324,9 +333,9 @@ public class ViewPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_cadastrarPessoa1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_cadastrarSetor, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_consultarPessoa2, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_consultarSetor, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -334,38 +343,39 @@ public class ViewPrincipal extends javax.swing.JFrame {
                                 .addComponent(btn_cadastrarSistema, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btn_cadastrarEquipamento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btn_cadastrarSecretaria, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btn_cadastrarAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_cadastrarAcesso1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btn_cadastrarTipoEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addComponent(btn_cadastrarSistema1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btn_consultarPessoa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btn_consultarPessoa1, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btn_consultarPessoa3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btn_cadastrarAcesso2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addComponent(btn_consultarPessoa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_consultarEquipamento, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btn_consultarSecretaria, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_consultarTipoEquipamento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_consultarSistema, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btn_cadastrarAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_cadastrarAcesso1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(txt_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_cadastrarAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_cadastrarAcesso, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_cadastrarAcesso1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(176, 176, 176)
                         .addComponent(btn_cadastrarSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_cadastrarAcesso1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_cadastrarTipoEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_cadastrarEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_consultarPessoa1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btn_consultarEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_cadastrarPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -373,15 +383,15 @@ public class ViewPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_cadastrarSecretaria, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_consultarPessoa3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btn_consultarSecretaria, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_cadastrarPessoa1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_consultarPessoa2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btn_cadastrarSetor, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_consultarSetor, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_cadastrarSistema1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_consultarSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_cadastrarAcesso2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_consultarTipoEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -416,17 +426,17 @@ public class ViewPrincipal extends javax.swing.JFrame {
         btn_cadastrarPessoa();
     }//GEN-LAST:event_btn_cadastrarPessoaActionPerformed
 
-    private void btn_cadastrarPessoa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarPessoa1ActionPerformed
+    private void btn_cadastrarSetorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarSetorActionPerformed
         btn_cadastrarSetor();
-    }//GEN-LAST:event_btn_cadastrarPessoa1ActionPerformed
+    }//GEN-LAST:event_btn_cadastrarSetorActionPerformed
 
     private void btn_consultarPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarPessoaActionPerformed
         btn_consultarPessoa();
     }//GEN-LAST:event_btn_consultarPessoaActionPerformed
 
-    private void btn_consultarPessoa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarPessoa1ActionPerformed
+    private void btn_consultarEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarEquipamentoActionPerformed
         btn_consultarEquipamento();
-    }//GEN-LAST:event_btn_consultarPessoa1ActionPerformed
+    }//GEN-LAST:event_btn_consultarEquipamentoActionPerformed
 
     private void btn_cadastrarAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarAcessoActionPerformed
         btn_cadastrarAcesso();
@@ -476,28 +486,36 @@ public class ViewPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_mi_cadEquipamento7ActionPerformed
 
-    private void btn_cadastrarAcesso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarAcesso1ActionPerformed
+    private void btn_cadastrarTipoEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarTipoEquipamentoActionPerformed
         btn_cadastrarTipoEquipamento();
-    }//GEN-LAST:event_btn_cadastrarAcesso1ActionPerformed
+    }//GEN-LAST:event_btn_cadastrarTipoEquipamentoActionPerformed
 
-    private void btn_consultarPessoa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarPessoa2ActionPerformed
+    private void btn_consultarSetorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarSetorActionPerformed
         btn_consultarSetor();
-    }//GEN-LAST:event_btn_consultarPessoa2ActionPerformed
+    }//GEN-LAST:event_btn_consultarSetorActionPerformed
 
-    private void btn_cadastrarSistema1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarSistema1ActionPerformed
-        btn_consultarSistema();
-    }//GEN-LAST:event_btn_cadastrarSistema1ActionPerformed
-
-    private void btn_consultarPessoa3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarPessoa3ActionPerformed
+    private void btn_consultarSecretariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarSecretariaActionPerformed
         btn_consultarSecretaria();
-    }//GEN-LAST:event_btn_consultarPessoa3ActionPerformed
+    }//GEN-LAST:event_btn_consultarSecretariaActionPerformed
 
-    private void btn_cadastrarAcesso2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarAcesso2ActionPerformed
+    private void btn_consultarTipoEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarTipoEquipamentoActionPerformed
         btn_consultarTipoEquipamento();
-    }//GEN-LAST:event_btn_cadastrarAcesso2ActionPerformed
+    }//GEN-LAST:event_btn_consultarTipoEquipamentoActionPerformed
+
+    private void btn_consultarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarSistemaActionPerformed
+        btn_consultarSistema();
+    }//GEN-LAST:event_btn_consultarSistemaActionPerformed
+
+    private void btn_cadastrarAcesso1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarAcesso1ActionPerformed
+        btn_consultarAcesso();
+    }//GEN-LAST:event_btn_cadastrarAcesso1ActionPerformed
     public void btn_consultarPessoa(){
         new ViewConsultarPessoa().setVisible(true);
         this.setVisible(false);
+    }
+    public void btn_consultarAcesso(){
+       new ViewConsultarAcesso().setVisible(true);
+        this.setVisible(false); 
     }
     
     public void btn_consultarSecretaria(){
@@ -524,8 +542,6 @@ public class ViewPrincipal extends javax.swing.JFrame {
         new ViewConsultarTipoEquipamento().setVisible(true);
         this.setVisible(false);
     }
-    
-    
     
     public void btn_consultarSistema(){
         new ViewConsultarSistema().setVisible(true);
@@ -600,10 +616,6 @@ public class ViewPrincipal extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -616,17 +628,18 @@ public class ViewPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_cadastrarAcesso;
     private javax.swing.JButton btn_cadastrarAcesso1;
-    private javax.swing.JButton btn_cadastrarAcesso2;
     private javax.swing.JButton btn_cadastrarEquipamento;
     private javax.swing.JButton btn_cadastrarPessoa;
-    private javax.swing.JButton btn_cadastrarPessoa1;
     private javax.swing.JButton btn_cadastrarSecretaria;
+    private javax.swing.JButton btn_cadastrarSetor;
     private javax.swing.JButton btn_cadastrarSistema;
-    private javax.swing.JButton btn_cadastrarSistema1;
+    private javax.swing.JButton btn_cadastrarTipoEquipamento;
+    private javax.swing.JButton btn_consultarEquipamento;
     private javax.swing.JButton btn_consultarPessoa;
-    private javax.swing.JButton btn_consultarPessoa1;
-    private javax.swing.JButton btn_consultarPessoa2;
-    private javax.swing.JButton btn_consultarPessoa3;
+    private javax.swing.JButton btn_consultarSecretaria;
+    private javax.swing.JButton btn_consultarSetor;
+    private javax.swing.JButton btn_consultarSistema;
+    private javax.swing.JButton btn_consultarTipoEquipamento;
     private javax.swing.JMenu mb_cadastrar;
     private javax.swing.JMenu mb_cadastrar1;
     private javax.swing.JMenuBar menubar;

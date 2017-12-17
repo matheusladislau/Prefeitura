@@ -22,7 +22,7 @@ public class ViewCadastrarSecretaria extends javax.swing.JFrame {
 
         txt_titulo = new javax.swing.JLabel();
         txt_subtitulo = new javax.swing.JLabel();
-        btn_inserirMicro = new javax.swing.JButton();
+        btn_cadastrarSecretaria = new javax.swing.JButton();
         edt_recebeCodigo = new javax.swing.JTextField();
         edt_recebeSigla = new javax.swing.JTextField();
         edt_recebeNome = new javax.swing.JTextField();
@@ -51,17 +51,11 @@ public class ViewCadastrarSecretaria extends javax.swing.JFrame {
         txt_subtitulo.setFocusable(false);
         txt_subtitulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        btn_inserirMicro.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_inserirMicro.setText("Cadastrar");
-        btn_inserirMicro.addActionListener(new java.awt.event.ActionListener() {
+        btn_cadastrarSecretaria.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_cadastrarSecretaria.setText("Cadastrar");
+        btn_cadastrarSecretaria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_inserirMicroActionPerformed(evt);
-            }
-        });
-
-        edt_recebeCodigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edt_recebeCodigoActionPerformed(evt);
+                btn_cadastrarSecretariaActionPerformed(evt);
             }
         });
 
@@ -95,7 +89,7 @@ public class ViewCadastrarSecretaria extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(56, 56, 56)
-                        .addComponent(btn_inserirMicro, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_cadastrarSecretaria, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(88, 88, 88)
@@ -133,25 +127,21 @@ public class ViewCadastrarSecretaria extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btn_inserirMicro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_cadastrarSecretaria, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_inserirMicroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inserirMicroActionPerformed
-        inserirSecretaria();
-    }//GEN-LAST:event_btn_inserirMicroActionPerformed
-
-    private void edt_recebeCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edt_recebeCodigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_edt_recebeCodigoActionPerformed
+    private void btn_cadastrarSecretariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarSecretariaActionPerformed
+        cadastrarSecretaria();
+    }//GEN-LAST:event_btn_cadastrarSecretariaActionPerformed
 
     private void btn_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltarActionPerformed
         btn_voltar();
     }//GEN-LAST:event_btn_voltarActionPerformed
-    public void inserirSecretaria(){
+    public void cadastrarSecretaria(){
         int codigo=Integer.parseInt(edt_recebeCodigo.getText());
         String nome=edt_recebeNome.getText();
         String sigla=edt_recebeSigla.getText();
@@ -194,8 +184,6 @@ public class ViewCadastrarSecretaria extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         
 
         /* Create and display the form */
@@ -207,7 +195,7 @@ public class ViewCadastrarSecretaria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_inserirMicro;
+    private javax.swing.JButton btn_cadastrarSecretaria;
     private javax.swing.JButton btn_voltar;
     private javax.swing.JTextField edt_recebeCodigo;
     private javax.swing.JTextField edt_recebeNome;

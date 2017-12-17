@@ -2,7 +2,6 @@ package View;
 import Control.SecretariaController;
 import Control.SetorController;
 import Model.Secretaria;
-import Model.Setor;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -64,12 +63,6 @@ public class ViewCadastrarSetor extends javax.swing.JFrame{
         btn_inserirMicro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_inserirMicroActionPerformed(evt);
-            }
-        });
-
-        edt_recebeNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edt_recebeNomeActionPerformed(evt);
             }
         });
 
@@ -193,10 +186,6 @@ public class ViewCadastrarSetor extends javax.swing.JFrame{
             inserir();
     }//GEN-LAST:event_btn_inserirMicroActionPerformed
 
-    private void edt_recebeNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edt_recebeNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_edt_recebeNomeActionPerformed
-
     private void btn_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltarActionPerformed
         btn_voltar();
     }//GEN-LAST:event_btn_voltarActionPerformed
@@ -226,11 +215,7 @@ public class ViewCadastrarSetor extends javax.swing.JFrame{
             ((DefaultTableModel)tbl_secretaria.getModel()).addRow(new Object[]{
                 listaSecretaria.get(i).getCodigoSecretaria(),listaSecretaria.get(i).getSiglaSecretaria(),listaSecretaria.get(i).getNomeSecretaria()});
         }
-        
-//        ((DefaultTableModel)tbl_secretaria.getModel()).addRow(new Object[]{"1","sa"});
     }
-    
-    
     
     /**
      * @param args the command line arguments
@@ -258,12 +243,6 @@ public class ViewCadastrarSetor extends javax.swing.JFrame{
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ViewCadastrarSetor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
     

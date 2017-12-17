@@ -1,15 +1,14 @@
 package View;
-import Control.SistemaController;
-import Model.Sistema;
+import Control.AcessoSistemaController;
+import Model.AcessoSistema;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-public class ViewConsultarSistema extends javax.swing.JFrame{
-    public ViewConsultarSistema(){
+public class ViewConsultarAcesso extends javax.swing.JFrame{
+    public ViewConsultarAcesso(){
         initComponents();
         atualizarTabelaSistema();
     }
-    Sistema sistema;
-    SistemaController sistemaControl=new SistemaController();
+    AcessoSistemaController acessoControl=new AcessoSistemaController();
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,7 +39,7 @@ public class ViewConsultarSistema extends javax.swing.JFrame{
 
         txt_subtitulo.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         txt_subtitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txt_subtitulo.setText("Consultar Sistema");
+        txt_subtitulo.setText("Consultar Acesso");
         txt_subtitulo.setToolTipText("");
         txt_subtitulo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         txt_subtitulo.setFocusable(false);
@@ -51,14 +50,14 @@ public class ViewConsultarSistema extends javax.swing.JFrame{
 
             },
             new String [] {
-                "Sistema", "Desenvolvedor"
+                "Sistema", "Desenvolvedor", "Nome Pessoa", "Matricula", "CPF"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class
+                java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, true, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -88,11 +87,11 @@ public class ViewConsultarSistema extends javax.swing.JFrame{
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(txt_subtitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(txt_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 399, Short.MAX_VALUE)
+            .addComponent(txt_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scr_setor, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(scr_setor, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -104,10 +103,10 @@ public class ViewConsultarSistema extends javax.swing.JFrame{
                 .addComponent(txt_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txt_subtitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(19, 19, 19)
                 .addComponent(scr_setor, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -119,17 +118,25 @@ public class ViewConsultarSistema extends javax.swing.JFrame{
     }//GEN-LAST:event_btn_voltarActionPerformed
     
     public void atualizarTabelaSistema(){
-        List<Sistema> listaSistema=sistemaControl.findAll();
-        for (int i=0; i<listaSistema.size(); i++){
+        List<AcessoSistema> listaAcesso=acessoControl.findAll();
+        for (int i=0; i<listaAcesso.size(); i++){
             ((DefaultTableModel)tbl_sistemas.getModel()).addRow(new Object[]{
-                (listaSistema.get(i).getNomeSistema()),listaSistema.get(i).getDesenvolvedor()});
+                listaAcesso.get(i).getSistema().getNomeSistema(),
+                listaAcesso.get(i).getSistema().getDesenvolvedor(),
+                
+                listaAcesso.get(i).getPessoa().getNomePessoa(),
+                listaAcesso.get(i).getPessoa().getMatricula(),
+                listaAcesso.get(i).getPessoa().getCpf()
+            
+            
+            });
         }
     }
     
     public void btn_voltar(){
         new ViewPrincipal().setVisible(true);
         this.setVisible(false);
-    }
+    } 
       
     /**
      * @param args the command line arguments
@@ -148,13 +155,13 @@ public class ViewConsultarSistema extends javax.swing.JFrame{
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewConsultarSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewConsultarAcesso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewConsultarSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewConsultarAcesso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewConsultarSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewConsultarAcesso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewConsultarSistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewConsultarAcesso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         
         //</editor-fold>
@@ -162,7 +169,7 @@ public class ViewConsultarSistema extends javax.swing.JFrame{
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewConsultarSistema().setVisible(true);
+                new ViewConsultarAcesso().setVisible(true);
             }
         });
     }

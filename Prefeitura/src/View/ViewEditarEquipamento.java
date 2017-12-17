@@ -1,10 +1,7 @@
 package View;
 import Control.EquipamentoController;
 import Model.Equipamento;
-import Model.Secretaria;
 import Model.Setor;
-import Model.TipoEquipamento;
-import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class ViewEditarEquipamento extends javax.swing.JFrame{
@@ -32,7 +29,7 @@ public class ViewEditarEquipamento extends javax.swing.JFrame{
         txt_identificacao = new javax.swing.JLabel();
         txt_ip = new javax.swing.JLabel();
         btn_voltar = new javax.swing.JButton();
-        btn_inserirMicro = new javax.swing.JButton();
+        btn_salvarEquipamento = new javax.swing.JButton();
         scr_tipoEquipamento = new javax.swing.JScrollPane();
         tbl_tipoEquipamento = new javax.swing.JTable();
         txt_setor = new javax.swing.JLabel();
@@ -72,11 +69,11 @@ public class ViewEditarEquipamento extends javax.swing.JFrame{
             }
         });
 
-        btn_inserirMicro.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_inserirMicro.setText("Salvar");
-        btn_inserirMicro.addActionListener(new java.awt.event.ActionListener() {
+        btn_salvarEquipamento.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_salvarEquipamento.setText("Salvar");
+        btn_salvarEquipamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_inserirMicroActionPerformed(evt);
+                btn_salvarEquipamentoActionPerformed(evt);
             }
         });
 
@@ -140,7 +137,7 @@ public class ViewEditarEquipamento extends javax.swing.JFrame{
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_inserirMicro, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_salvarEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(119, 119, 119))
         );
         layout.setVerticalGroup(
@@ -164,7 +161,7 @@ public class ViewEditarEquipamento extends javax.swing.JFrame{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scr_tipoEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_inserirMicro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_salvarEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -176,9 +173,9 @@ public class ViewEditarEquipamento extends javax.swing.JFrame{
         btn_voltar();
     }//GEN-LAST:event_btn_voltarActionPerformed
 
-    private void btn_inserirMicroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inserirMicroActionPerformed
-        editarEquipamento();
-    }//GEN-LAST:event_btn_inserirMicroActionPerformed
+    private void btn_salvarEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salvarEquipamentoActionPerformed
+        salvarEquipamento();
+    }//GEN-LAST:event_btn_salvarEquipamentoActionPerformed
 //    public void atualizarTabelaSecretaria(){
 //        List<Secretaria> listaSecretaria=new SecretariaDAO().findAll();
 //        for (int i=0; i<listaSecretaria.size(); i++) {
@@ -207,13 +204,12 @@ public class ViewEditarEquipamento extends javax.swing.JFrame{
     }
         
     
-    public void editarEquipamento(){
+    public void salvarEquipamento(){
         String ip=edt_recebeIp.getText();
         String identificacao=edt_recebeIdentificacao.getText();
         
         equipamento.setIdentificacaoEquipamento(identificacao);
         equipamento.setIpEquipamento(ip);
-//        equipamento.setTipoEquipamento(new TipoEquipamentoDAO().getById(tbl_tipoEquipamento.getSelectedRow()));
         
         equipamentoControl.update(equipamento);
 
@@ -262,7 +258,7 @@ public class ViewEditarEquipamento extends javax.swing.JFrame{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_inserirMicro;
+    private javax.swing.JButton btn_salvarEquipamento;
     private javax.swing.JButton btn_voltar;
     private javax.swing.JTextField edt_recebeIdentificacao;
     private javax.swing.JTextField edt_recebeIp;

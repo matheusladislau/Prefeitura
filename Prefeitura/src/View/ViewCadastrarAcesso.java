@@ -32,7 +32,7 @@ public class ViewCadastrarAcesso extends javax.swing.JFrame{
         scr_setor = new javax.swing.JScrollPane();
         tbl_sistemas = new javax.swing.JTable();
         txt_selecioneSistema = new javax.swing.JLabel();
-        btn_voltar1 = new javax.swing.JButton();
+        btn_voltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(440, 230));
@@ -95,11 +95,11 @@ public class ViewCadastrarAcesso extends javax.swing.JFrame{
         txt_selecioneSistema.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txt_selecioneSistema.setText("Selecione o sistema");
 
-        btn_voltar1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_voltar1.setText("Voltar");
-        btn_voltar1.addActionListener(new java.awt.event.ActionListener() {
+        btn_voltar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_voltar.setText("Voltar");
+        btn_voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_voltar1ActionPerformed(evt);
+                btn_voltarActionPerformed(evt);
             }
         });
 
@@ -111,7 +111,7 @@ public class ViewCadastrarAcesso extends javax.swing.JFrame{
             .addComponent(txt_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(btn_voltar1)
+                .addComponent(btn_voltar)
                 .addGap(63, 63, 63)
                 .addComponent(btn_selecionar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(143, Short.MAX_VALUE))
@@ -136,7 +136,7 @@ public class ViewCadastrarAcesso extends javax.swing.JFrame{
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addComponent(btn_voltar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btn_selecionar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19))
         );
@@ -148,15 +148,13 @@ public class ViewCadastrarAcesso extends javax.swing.JFrame{
         if((tbl_sistemas.getSelectedRow()>=0)){
             sistema=sistemaControl.getById(tbl_sistemas.getSelectedRow()+1);
             btn_selecionar();
-//            btn_voltar1.setVisible(false);
-//            txt_selecioneSetor.setText("Cadastrando em: '"+setor.getNomeSetor()+"', secretaria: '"+setor.getSecretaria().getNomeSecretaria()+"'");
         }else
             JOptionPane.showMessageDialog(null,"Deve selecionar um sistema");
     }//GEN-LAST:event_btn_selecionarActionPerformed
 
-    private void btn_voltar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltar1ActionPerformed
+    private void btn_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltarActionPerformed
         btn_voltar();
-    }//GEN-LAST:event_btn_voltar1ActionPerformed
+    }//GEN-LAST:event_btn_voltarActionPerformed
     
     public void atualizarTabelaSistema(){
         List<Sistema> listaSistema=sistemaControl.findAll();
@@ -167,7 +165,7 @@ public class ViewCadastrarAcesso extends javax.swing.JFrame{
     }
    
     public void btn_selecionar(){
-        ViewAcessarSistema2 view=new ViewAcessarSistema2();
+        ViewCadastrarAcessoSelecionarPessoa view=new ViewCadastrarAcessoSelecionarPessoa();
         view.setSistema(sistema);
         view.setVisible(true);
         this.setVisible(false);
@@ -217,7 +215,7 @@ public class ViewCadastrarAcesso extends javax.swing.JFrame{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_selecionar;
-    private javax.swing.JButton btn_voltar1;
+    private javax.swing.JButton btn_voltar;
     private javax.swing.JScrollPane scr_setor;
     private javax.swing.JTable tbl_sistemas;
     private javax.swing.JLabel txt_selecioneSistema;

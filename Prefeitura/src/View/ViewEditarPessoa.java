@@ -2,16 +2,16 @@ package View;
 import Control.PessoaController;
 import Model.Pessoa;
 import Model.Setor;
-import javax.swing.JOptionPane;
-public class ViewCadastrarPessoa extends javax.swing.JFrame {
+public class ViewEditarPessoa extends javax.swing.JFrame {
     /**
      * Creates new form ViewPrincipal
      */
-    public ViewCadastrarPessoa(){
+    public ViewEditarPessoa(){
         initComponents();
     }
     Setor setor;
     PessoaController control=new PessoaController();
+    Pessoa pessoa;
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,7 +29,7 @@ public class ViewCadastrarPessoa extends javax.swing.JFrame {
         txt_nome = new javax.swing.JLabel();
         txt_cpf = new javax.swing.JLabel();
         btn_voltar = new javax.swing.JButton();
-        btn_cadastrarPessoa = new javax.swing.JButton();
+        btn_inserirPessoa = new javax.swing.JButton();
         edt_recebeMatricula = new javax.swing.JTextField();
         txt_matricula = new javax.swing.JLabel();
         txt_cadastrando = new javax.swing.JLabel();
@@ -48,7 +48,7 @@ public class ViewCadastrarPessoa extends javax.swing.JFrame {
 
         txt_subtitulo.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         txt_subtitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txt_subtitulo.setText("Cadastrar Pessoa");
+        txt_subtitulo.setText("Editar Pessoa");
         txt_subtitulo.setToolTipText("");
         txt_subtitulo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         txt_subtitulo.setFocusable(false);
@@ -74,11 +74,11 @@ public class ViewCadastrarPessoa extends javax.swing.JFrame {
             }
         });
 
-        btn_cadastrarPessoa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_cadastrarPessoa.setText("Cadastrar");
-        btn_cadastrarPessoa.addActionListener(new java.awt.event.ActionListener() {
+        btn_inserirPessoa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_inserirPessoa.setText("Editar");
+        btn_inserirPessoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_cadastrarPessoaActionPerformed(evt);
+                btn_inserirPessoaActionPerformed(evt);
             }
         });
 
@@ -86,7 +86,7 @@ public class ViewCadastrarPessoa extends javax.swing.JFrame {
         txt_matricula.setText("Matrícula");
 
         txt_cadastrando.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txt_cadastrando.setText("Cadastrando em:");
+        txt_cadastrando.setText("Setor:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -102,7 +102,7 @@ public class ViewCadastrarPessoa extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(123, 123, 123)
-                                .addComponent(btn_cadastrarPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btn_inserirPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txt_nome)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(48, 48, 48)
@@ -142,7 +142,7 @@ public class ViewCadastrarPessoa extends javax.swing.JFrame {
                     .addComponent(edt_recebeCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_cpf))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_cadastrarPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_inserirPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -154,30 +154,33 @@ public class ViewCadastrarPessoa extends javax.swing.JFrame {
         btn_voltar();
     }//GEN-LAST:event_btn_voltarActionPerformed
 
-    private void btn_cadastrarPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarPessoaActionPerformed
-        insert();
-    }//GEN-LAST:event_btn_cadastrarPessoaActionPerformed
+    private void btn_inserirPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inserirPessoaActionPerformed
+        editar();
+    }//GEN-LAST:event_btn_inserirPessoaActionPerformed
 
     private void edt_recebeNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edt_recebeNomeActionPerformed
     }//GEN-LAST:event_edt_recebeNomeActionPerformed
-    public void insert(){
-        String matricula=edt_recebeMatricula.getText();
-        String cpf=edt_recebeCpf.getText();
-        String nome=edt_recebeNome.getText();
+    public void editar(){
+        
 
         limpar();
         
-        control.insert(matricula,nome,cpf,setor);
-        JOptionPane.showMessageDialog(null,"Pessoa cadastrada");
+        
     }
+    public void setPessoa(Pessoa pessoa){
+        this.pessoa=pessoa;
+        edt_recebeNome.setText(pessoa.getNomePessoa());
+        edt_recebeCpf.setText(pessoa.getCpf());
+        edt_recebeMatricula.setText(pessoa.getMatricula());
+    }
+    
     public void btn_voltar(){
         new ViewPrincipal().setVisible(true);
         this.setVisible(false);
     }
     
     public void setSetor(Setor setor){
-        this.setor=setor;
-        txt_cadastrando.setText("Cadastrando em: '"+setor.getNomeSetor()+"', Secretaria: "+setor.getSecretaria().getNomeSecretaria());
+    
     }
     
     public void limpar(){
@@ -189,47 +192,42 @@ public class ViewCadastrarPessoa extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-   
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(ViewEditarPessoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(ViewEditarPessoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(ViewEditarPessoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(ViewEditarPessoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new ViewEditarPessoa().setVisible(true);
+            }
+        });
+    }
 
-    
-//     public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(ViewCadastrarPessoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(ViewCadastrarPessoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(ViewCadastrarPessoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(ViewCadastrarPessoa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//        //</editor-fold>
-//        //</editor-fold>
-//        //</editor-fold>
-//        
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new ViewCadastrarPessoa().setVisible(true);
-//            }
-//        });
-//    }
-    
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_cadastrarPessoa;
+    private javax.swing.JButton btn_inserirPessoa;
     private javax.swing.JButton btn_voltar;
     private javax.swing.JTextField edt_recebeCpf;
     private javax.swing.JTextField edt_recebeMatricula;

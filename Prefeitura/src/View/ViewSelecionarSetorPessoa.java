@@ -29,7 +29,7 @@ public class ViewSelecionarSetorPessoa extends javax.swing.JFrame{
         scr_setor = new javax.swing.JScrollPane();
         tbl_setor = new javax.swing.JTable();
         txt_selecioneSetor = new javax.swing.JLabel();
-        btn_voltar1 = new javax.swing.JButton();
+        btn_voltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(440, 230));
@@ -96,11 +96,11 @@ public class ViewSelecionarSetorPessoa extends javax.swing.JFrame{
         txt_selecioneSetor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txt_selecioneSetor.setText("Selecione o setor");
 
-        btn_voltar1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_voltar1.setText("Voltar");
-        btn_voltar1.addActionListener(new java.awt.event.ActionListener() {
+        btn_voltar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_voltar.setText("Voltar");
+        btn_voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_voltar1ActionPerformed(evt);
+                btn_voltarActionPerformed(evt);
             }
         });
 
@@ -116,7 +116,7 @@ public class ViewSelecionarSetorPessoa extends javax.swing.JFrame{
                     .addComponent(scr_setor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(txt_selecioneSetor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_voltar1)
+                        .addComponent(btn_voltar)
                         .addGap(69, 69, 69)
                         .addComponent(btn_selecionar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 139, Short.MAX_VALUE)))
@@ -135,7 +135,7 @@ public class ViewSelecionarSetorPessoa extends javax.swing.JFrame{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_selecionar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_voltar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16))
         );
 
@@ -149,17 +149,10 @@ public class ViewSelecionarSetorPessoa extends javax.swing.JFrame{
             JOptionPane.showMessageDialog(null,"Deve selecionar setor");
     }//GEN-LAST:event_btn_selecionarActionPerformed
 
-    private void btn_voltar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltar1ActionPerformed
+    private void btn_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltarActionPerformed
         btn_voltar();
-    }//GEN-LAST:event_btn_voltar1ActionPerformed
-//    public void atualizarTabelaSecretaria(){
-//        List<Secretaria> listaSecretaria=new SecretariaDAO().findAll();
-//        for (int i=0; i<listaSecretaria.size(); i++) {
-//            ((DefaultTableModel)tbl_secretaria.getModel()).addRow(new Object[]{
-//                listaSecretaria.get(i).getCodigoSecretaria(),listaSecretaria.get(i).getSiglaSecretaria(),listaSecretaria.get(i).getNomeSecretaria()});
-//        }
-//    }
-    
+    }//GEN-LAST:event_btn_voltarActionPerformed
+
     public void atualizarTabelaSetor(){
         List<Setor> listaSetor=control.findAll();
         for (int i=0; i<listaSetor.size(); i++) {
@@ -177,7 +170,7 @@ public class ViewSelecionarSetorPessoa extends javax.swing.JFrame{
     }
     
     public void btn_voltar(){
-        
+        new ViewPrincipal().setVisible(true);
         this.setVisible(false);
     }
     
@@ -220,7 +213,7 @@ public class ViewSelecionarSetorPessoa extends javax.swing.JFrame{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_selecionar;
-    private javax.swing.JButton btn_voltar1;
+    private javax.swing.JButton btn_voltar;
     private javax.swing.JScrollPane scr_setor;
     private javax.swing.JTable tbl_setor;
     private javax.swing.JLabel txt_selecioneSetor;

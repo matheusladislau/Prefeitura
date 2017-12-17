@@ -35,7 +35,7 @@
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-              <Component id="btn_voltar1" min="-2" pref="88" max="-2" attributes="0"/>
+              <Component id="btn_voltar" min="-2" pref="88" max="-2" attributes="0"/>
               <EmptySpace pref="289" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -49,7 +49,7 @@
               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
               <Component id="scr_setor" min="-2" pref="199" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btn_voltar1" pref="37" max="32767" attributes="0"/>
+              <Component id="btn_voltar" pref="37" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -135,7 +135,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="btn_voltar1">
+    <Component class="javax.swing.JButton" name="btn_voltar">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="14" style="0"/>
@@ -143,7 +143,7 @@
         <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_voltar1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_voltarActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

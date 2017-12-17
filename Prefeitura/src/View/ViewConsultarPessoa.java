@@ -1,8 +1,6 @@
 package View;
 import Control.PessoaController;
-import DAO.PessoaDAO;
 import Model.Pessoa;
-import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -13,7 +11,8 @@ public class ViewConsultarPessoa extends javax.swing.JFrame {
     public ViewConsultarPessoa(){
         initComponents();
     }
-    PessoaController controlPessoa=new PessoaController();
+    List<Pessoa> listaPessoa;
+    PessoaController pessoaControl=new PessoaController();
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,16 +27,13 @@ public class ViewConsultarPessoa extends javax.swing.JFrame {
         txt_subtitulo = new javax.swing.JLabel();
         txt_nome = new javax.swing.JLabel();
         edt_recebeNome = new javax.swing.JTextField();
-        btn_consultarPessoa = new javax.swing.JButton();
+        btn_consultarEquipamento = new javax.swing.JButton();
         edt_recebeMatricula = new javax.swing.JTextField();
-        txt_secretaria = new javax.swing.JLabel();
         txt_matricula = new javax.swing.JLabel();
-        edt_recebeSecretaria = new javax.swing.JTextField();
+        btn_editarEquipamento = new javax.swing.JButton();
+        btn_voltar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_pessoa = new javax.swing.JTable();
-        btn_editarPessoa = new javax.swing.JButton();
-        btn_voltar = new javax.swing.JButton();
-        btn_editarPessoa1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(440, 180));
@@ -68,23 +64,30 @@ public class ViewConsultarPessoa extends javax.swing.JFrame {
             }
         });
 
-        btn_consultarPessoa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_consultarPessoa.setText("Consultar");
-        btn_consultarPessoa.addActionListener(new java.awt.event.ActionListener() {
+        btn_consultarEquipamento.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_consultarEquipamento.setText("Consultar");
+        btn_consultarEquipamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_consultarPessoaActionPerformed(evt);
+                btn_consultarEquipamentoActionPerformed(evt);
             }
         });
-
-        txt_secretaria.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txt_secretaria.setText("Secretaria");
 
         txt_matricula.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txt_matricula.setText("Matrícula");
 
-        edt_recebeSecretaria.addActionListener(new java.awt.event.ActionListener() {
+        btn_editarEquipamento.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_editarEquipamento.setText("Editar");
+        btn_editarEquipamento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edt_recebeSecretariaActionPerformed(evt);
+                btn_editarEquipamentoActionPerformed(evt);
+            }
+        });
+
+        btn_voltar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_voltar.setText("Voltar");
+        btn_voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_voltarActionPerformed(evt);
             }
         });
 
@@ -105,80 +108,36 @@ public class ViewConsultarPessoa extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tbl_pessoa);
-        if (tbl_pessoa.getColumnModel().getColumnCount() > 0) {
-            tbl_pessoa.getColumnModel().getColumn(0).setResizable(false);
-            tbl_pessoa.getColumnModel().getColumn(0).setPreferredWidth(160);
-            tbl_pessoa.getColumnModel().getColumn(1).setResizable(false);
-            tbl_pessoa.getColumnModel().getColumn(2).setResizable(false);
-            tbl_pessoa.getColumnModel().getColumn(2).setPreferredWidth(100);
-            tbl_pessoa.getColumnModel().getColumn(3).setResizable(false);
-            tbl_pessoa.getColumnModel().getColumn(4).setResizable(false);
-        }
-
-        btn_editarPessoa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_editarPessoa.setText("Editar");
-        btn_editarPessoa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_editarPessoaActionPerformed(evt);
-            }
-        });
-
-        btn_voltar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_voltar.setText("Voltar");
-        btn_voltar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_voltarActionPerformed(evt);
-            }
-        });
-
-        btn_editarPessoa1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_editarPessoa1.setText("Permitir Acesso");
-        btn_editarPessoa1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_editarPessoa1ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(txt_subtitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(txt_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(txt_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(7, 7, 7)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txt_secretaria)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(edt_recebeSecretaria, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txt_nome)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(edt_recebeNome, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
-                                .addComponent(txt_matricula)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(edt_recebeMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 175, Short.MAX_VALUE)
-                        .addComponent(btn_consultarPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(161, 161, 161))))
+                .addGap(17, 17, 17)
+                .addComponent(txt_nome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(edt_recebeNome, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(txt_matricula)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(edt_recebeMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(47, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_consultarEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(161, 161, 161))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(btn_editarPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_editarPessoa1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(103, 103, 103)
+                .addComponent(btn_editarEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,28 +148,21 @@ public class ViewConsultarPessoa extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(edt_recebeNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txt_nome))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txt_matricula)
-                        .addComponent(edt_recebeMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(edt_recebeSecretaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txt_secretaria))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_consultarPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(edt_recebeMatricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(edt_recebeNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_nome)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_consultarEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_voltar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_editarPessoa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_editarPessoa1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(btn_editarEquipamento, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
 
         pack();
@@ -220,38 +172,38 @@ public class ViewConsultarPessoa extends javax.swing.JFrame {
         btn_voltar();
     }//GEN-LAST:event_btn_voltarActionPerformed
 
-    private void btn_consultarPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarPessoaActionPerformed
+    private void btn_consultarEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultarEquipamentoActionPerformed
         consultar();
-        btn_consultarPessoa.setVisible(false);
-    }//GEN-LAST:event_btn_consultarPessoaActionPerformed
+        btn_consultarEquipamento.setVisible(false);
+    }//GEN-LAST:event_btn_consultarEquipamentoActionPerformed
 
     private void edt_recebeNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edt_recebeNomeActionPerformed
     }//GEN-LAST:event_edt_recebeNomeActionPerformed
 
-    private void btn_editarPessoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarPessoaActionPerformed
+    private void btn_editarEquipamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarEquipamentoActionPerformed
         if(tbl_pessoa.getSelectedRow()>=0){
-            
+            ViewEditarPessoa view=new ViewEditarPessoa();
+            view.setPessoa(listaPessoa.get(tbl_pessoa.getSelectedRow()));
+            view.setVisible(true);
+            this.setVisible(false);
         }else
-            JOptionPane.showMessageDialog(null,"Selecione um pessoa para editar");
-    }//GEN-LAST:event_btn_editarPessoaActionPerformed
-
-    private void edt_recebeSecretariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edt_recebeSecretariaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_edt_recebeSecretariaActionPerformed
-
-    private void btn_editarPessoa1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarPessoa1ActionPerformed
-        btn_removerPessoa();
-    }//GEN-LAST:event_btn_editarPessoa1ActionPerformed
+            JOptionPane.showMessageDialog(null,"Selecione uma pessoa para editar");
+    }//GEN-LAST:event_btn_editarEquipamentoActionPerformed
     public void consultar(){
         String nome=edt_recebeNome.getText();
         String matricula=edt_recebeMatricula.getText();
-        String secretaria=edt_recebeSecretaria.getText();
         
-        List<Pessoa> listaPessoa=new PessoaDAO().findByName(nome);
+        listaPessoa=pessoaControl.findByNameMatricula(nome,matricula);
         for (int i=0; i<listaPessoa.size(); i++){
             Pessoa pessoa=listaPessoa.get(i);
             ((DefaultTableModel)tbl_pessoa.getModel()).addRow(new Object[]{
-                (pessoa.getNomePessoa()),pessoa.getMatricula(),pessoa.getCpf()});
+                (pessoa.getNomePessoa()),
+                pessoa.getMatricula(),
+                pessoa.getCpf(),
+                pessoa.getSetor().getNomeSetor(),
+                pessoa.getSetor().getSecretaria().getNomeSecretaria()
+                
+            });
         }
     }
     public void btn_voltar(){
@@ -263,9 +215,27 @@ public class ViewConsultarPessoa extends javax.swing.JFrame {
         edt_recebeNome.setText(null);
     }
     
-    public void btn_removerPessoa(){
-        
-    }
+//    public void btn_remover(){
+//        Pessoa pessoa=listaPessoa.get(tbl_pessoa.getSelectedRow());
+//        String nome=JOptionPane.showInputDialog("Para efetuar a exclusão escreva exatamente a matrícula da pessoa: ");
+//        if(nome.equals(pessoa.getMatricula())){
+//            removerPessoa(pessoa);
+//            ViewConsultarPessoa v=new ViewConsultarPessoa();
+//            v.edt_recebeMatricula.setText(this.edt_recebeMatricula.getText());
+//            v.edt_recebeNome.setText(this.edt_recebeNome.getText());
+//            v.btn_consultarEquipamento.setVisible(false);
+//            v.consultar();
+//            this.setVisible(false);
+//            v.setVisible(true);
+//        }else{
+//            JOptionPane.showMessageDialog(null,"Identificação incorreta, tente novamente");
+//        }
+//    }
+    
+//    public void removerPessoa(Pessoa p){
+//        pessoaControl.remove(p);
+//        JOptionPane.showMessageDialog(null,"Equipamento removido");    
+//    }
     
     /**
      * @param args the command line arguments
@@ -294,15 +264,7 @@ public class ViewConsultarPessoa extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
        
-        
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -313,18 +275,15 @@ public class ViewConsultarPessoa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_consultarPessoa;
-    private javax.swing.JButton btn_editarPessoa;
-    private javax.swing.JButton btn_editarPessoa1;
+    private javax.swing.JButton btn_consultarEquipamento;
+    private javax.swing.JButton btn_editarEquipamento;
     private javax.swing.JButton btn_voltar;
     private javax.swing.JTextField edt_recebeMatricula;
     private javax.swing.JTextField edt_recebeNome;
-    private javax.swing.JTextField edt_recebeSecretaria;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbl_pessoa;
     private javax.swing.JLabel txt_matricula;
     private javax.swing.JLabel txt_nome;
-    private javax.swing.JLabel txt_secretaria;
     private javax.swing.JLabel txt_subtitulo;
     private javax.swing.JLabel txt_titulo;
     // End of variables declaration//GEN-END:variables

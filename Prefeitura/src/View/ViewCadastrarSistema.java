@@ -1,6 +1,5 @@
 package View;
 import Control.SistemaController;
-import Model.Sistema;
 import javax.swing.JOptionPane;
 public class ViewCadastrarSistema extends javax.swing.JFrame {
     /**
@@ -9,7 +8,6 @@ public class ViewCadastrarSistema extends javax.swing.JFrame {
     public ViewCadastrarSistema(){
         initComponents();
     }
-    
     SistemaController control=new SistemaController();
     
     /**
@@ -28,7 +26,7 @@ public class ViewCadastrarSistema extends javax.swing.JFrame {
         txt_desenvolvedor = new javax.swing.JLabel();
         txt_nome = new javax.swing.JLabel();
         btn_voltar = new javax.swing.JButton();
-        btn_inserirSistema = new javax.swing.JButton();
+        btn_cadastrarSistema = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(440, 230));
@@ -70,11 +68,11 @@ public class ViewCadastrarSistema extends javax.swing.JFrame {
             }
         });
 
-        btn_inserirSistema.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_inserirSistema.setText("Cadastrar");
-        btn_inserirSistema.addActionListener(new java.awt.event.ActionListener() {
+        btn_cadastrarSistema.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_cadastrarSistema.setText("Cadastrar");
+        btn_cadastrarSistema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_inserirSistemaActionPerformed(evt);
+                btn_cadastrarSistemaActionPerformed(evt);
             }
         });
 
@@ -87,7 +85,7 @@ public class ViewCadastrarSistema extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(66, 66, 66)
-                .addComponent(btn_inserirSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_cadastrarSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 110, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
@@ -106,19 +104,19 @@ public class ViewCadastrarSistema extends javax.swing.JFrame {
                 .addComponent(txt_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txt_subtitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txt_desenvolvedor)
-                    .addComponent(edt_recebeDesenvolvedor, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_nome)
                     .addComponent(edt_recebeNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(edt_recebeDesenvolvedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_desenvolvedor))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_voltar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btn_inserirSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_cadastrarSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(24, 24, 24))))
         );
 
@@ -129,18 +127,18 @@ public class ViewCadastrarSistema extends javax.swing.JFrame {
         btn_voltar();
     }//GEN-LAST:event_btn_voltarActionPerformed
 
-    private void btn_inserirSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inserirSistemaActionPerformed
+    private void btn_cadastrarSistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarSistemaActionPerformed
         insert();
-    }//GEN-LAST:event_btn_inserirSistemaActionPerformed
+    }//GEN-LAST:event_btn_cadastrarSistemaActionPerformed
 
     private void edt_recebeDesenvolvedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edt_recebeDesenvolvedorActionPerformed
     }//GEN-LAST:event_edt_recebeDesenvolvedorActionPerformed
     public void insert(){
-        String nome=edt_recebeNome.getText();
+        String nomeSistema=edt_recebeNome.getText();
         String desenvolvedor=edt_recebeDesenvolvedor.getText();
         edt_recebeDesenvolvedor.setText(null);
         edt_recebeNome.setText(null);
-        control.insert(nome,desenvolvedor);
+        control.insert(nomeSistema,desenvolvedor);
         JOptionPane.showMessageDialog(null, "Sistema Cadastrado");
     }
     public void btn_voltar(){
@@ -175,11 +173,6 @@ public class ViewCadastrarSistema extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -190,7 +183,7 @@ public class ViewCadastrarSistema extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_inserirSistema;
+    private javax.swing.JButton btn_cadastrarSistema;
     private javax.swing.JButton btn_voltar;
     private javax.swing.JTextField edt_recebeDesenvolvedor;
     private javax.swing.JTextField edt_recebeNome;
