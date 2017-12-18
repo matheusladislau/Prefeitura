@@ -69,6 +69,27 @@ public class Pessoa{
     public List<AcessoSistema> getAcessoSistema() {
         return acessoSistema;
     }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public void setNomePessoa(String nomePessoa) {
+        this.nomePessoa = nomePessoa;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public void setSetor(Setor setor) {
+        this.setor = setor;
+    }
+
+    public void setAcessoSistema(List<AcessoSistema> acessoSistema) {
+        this.acessoSistema = acessoSistema;
+    }
+    
     
     
 }

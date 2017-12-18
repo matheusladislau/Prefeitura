@@ -73,4 +73,14 @@ public class PessoaDAO extends DAO<Pessoa>{
         return resultList;      
         
     }
+    
+    
+    public void update(Pessoa pessoa){
+        Session session;
+        session=conexao.openSession();
+        Transaction t=session.beginTransaction();
+        session.update(pessoa);
+        t.commit();
+        session.close();
+    }
 }

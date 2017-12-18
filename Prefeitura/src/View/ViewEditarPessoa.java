@@ -2,6 +2,7 @@ package View;
 import Control.PessoaController;
 import Model.Pessoa;
 import Model.Setor;
+import javax.swing.JOptionPane;
 public class ViewEditarPessoa extends javax.swing.JFrame {
     /**
      * Creates new form ViewPrincipal
@@ -10,7 +11,7 @@ public class ViewEditarPessoa extends javax.swing.JFrame {
         initComponents();
     }
     Setor setor;
-    PessoaController control=new PessoaController();
+    PessoaController pessoaControl=new PessoaController();
     Pessoa pessoa;
     
     /**
@@ -67,7 +68,7 @@ public class ViewEditarPessoa extends javax.swing.JFrame {
         txt_cpf.setText("CPF");
 
         btn_voltar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btn_voltar.setText("Voltar");
+        btn_voltar.setText("Cancelar");
         btn_voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_voltarActionPerformed(evt);
@@ -95,10 +96,12 @@ public class ViewEditarPessoa extends javax.swing.JFrame {
             .addComponent(txt_subtitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(txt_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
+                .addComponent(btn_voltar)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(123, 123, 123)
@@ -115,11 +118,9 @@ public class ViewEditarPessoa extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(txt_cpf)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(edt_recebeCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(75, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(txt_cadastrando, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(edt_recebeCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addContainerGap(75, Short.MAX_VALUE))
+                    .addComponent(txt_cadastrando, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,10 +162,17 @@ public class ViewEditarPessoa extends javax.swing.JFrame {
     private void edt_recebeNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edt_recebeNomeActionPerformed
     }//GEN-LAST:event_edt_recebeNomeActionPerformed
     public void editar(){
-        
+        String nome=edt_recebeNome.getText();
+        String cpf=edt_recebeCpf.getText();
+        String matricula=edt_recebeMatricula.getText();
 
-        limpar();
+        pessoa.setNomePessoa(nome);
+        pessoa.setMatricula(matricula);
+        pessoa.setCpf(cpf);
         
+        pessoaControl.update(pessoa);
+        
+        JOptionPane.showMessageDialog(null, "Edição salva");
         
     }
     public void setPessoa(Pessoa pessoa){

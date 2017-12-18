@@ -20,6 +20,10 @@ public class PessoaController extends Controller<Pessoa>{
     public Pessoa getById(int id) {
         return dao.getById(id);
     }
+    
+    public void update(Pessoa pessoa){
+        dao.update(pessoa);
+    }
 
 //    public Pessoa getByName(String name){
 //        return dao.findByName(name);
